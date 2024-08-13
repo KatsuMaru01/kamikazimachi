@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行事予定</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>上鍛冶町竿燈会</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="schedule.html">行事予定</a></li>
+                <li><a href="activities.html">活動風景</a></li>
+                <li><a href="contact.html">問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div id="calendar"></div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: [
+                    
+                    // 他のイベントはここに追加
+                    {
+                        title: '竿燈祭り',
+                        start: '2024-08-03',
+                        description: '一年間の集大成！'
+                    },
+                    {
+                        title: '竿燈祭り',
+                        start: '2024-08-04',
+                        description: '一年間の集大成！'
+                    },
+                    {
+                        title: '竿燈祭り',
+                        start: '2024-08-05',
+                        description: '一年間の集大成！'
+                    },
+                    {
+                        title: '竿燈祭り',
+                        start: '2024-08-06',
+                        description: '一年間の集大成！'
+                    },
+                    {
+                        title: '妙技会',
+                        start: '2024-08-04',
+                        description: '規定演技、自由演技、個人演技、大若囃子'
+                    },
+                ],
+                eventClick: function(info) {
+                    alert('イベント: ' + info.event.title + '\n詳細: ' + info.event.extendedProps.description);
+                }
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
