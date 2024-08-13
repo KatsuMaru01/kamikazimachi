@@ -16,17 +16,17 @@ body {
 header {
     background: linear-gradient(to right, #6a1b9a, #ab47bc);
     color: #fff;
-    padding: 20px 0;
+    padding: 20px; /* 上下左右に均等なパディング */
     text-align: center;
     position: relative;
 }
 
 header .logo {
-    width: 100px;
-    height: 100px;
+    width: 80px; /* モバイルではロゴを小さく */
+    height: 80px;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -38,21 +38,24 @@ header .logo img {
 
 /* Headerタイトルとナビゲーションの位置調整 */
 header h1 {
-    margin-bottom: 10px;
-    font-size: 2.5em;
+    margin: 0;
+    font-size: 2em; /* スマホでは少し小さめ */
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    padding-top: 100px; /* ロゴの下に余白を作る */
+    text-align: center; /* スマホで中央揃え */
 }
 
+/* ナビゲーションのスタイル調整 */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    flex-direction: column; /* スマホでは縦に並べる */
+    padding: 0;
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin: 10px 0; /* 各リンクの上下のマージン */
 }
 
 nav ul li a {
@@ -63,7 +66,7 @@ nav ul li a {
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: background 0.3s;
 }
 
@@ -95,27 +98,25 @@ section p {
     font-size: 1.2em;
 }
 
-/* 画像を枠内に収める */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+/* 活動風景のスタイル調整 */
+#activities {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* ホームセクションの画像 */
-#home img {
-    max-width: 90%;
-    margin: 20px auto;
-}
-
-/* 活動風景セクションの画像 */
-#activities img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
+#activities article {
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+}
+
+#activities img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* Footer */
@@ -132,4 +133,32 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.9em;
+}
+
+/* スマホ向けのメディアクエリ */
+@media (max-width: 768px) {
+    header .logo {
+        width: 60px;
+        height: 60px;
+        top: 10px;
+        right: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        padding-top: 80px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
 }
