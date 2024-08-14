@@ -4,31 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>上鍛冶町竿燈会 - ホーム</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <img src="images/logo.jpg" alt="上鍛冶町竿燈会のロゴ" class="logo">
-        <h1>上鍛冶町竿燈会</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="schedule.html">行事予定</a></li>
-                <li><a href="activities.html">活動風景</a></li>
-                <li><a href="contact.html">問い合わせ</a></li>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-purple-800 text-white py-4">
+        <div class="container mx-auto flex flex-col items-center px-4">
+            <img src="images/logo.jpg" alt="上鍛冶町竿燈会のロゴ" class="h-16 w-16 rounded-full shadow-lg mb-2">
+            <h1 class="text-3xl font-bold">上鍛冶町竿燈会</h1>
+        </div>
+        <nav class="mt-4">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="index.html" class="text-lg hover:text-purple-300">ホーム</a></li>
+                <li><a href="schedule.html" class="text-lg hover:text-purple-300">行事予定</a></li>
+                <li><a href="activities.html" class="text-lg hover:text-purple-300">活動風景</a></li>
+                <li><a href="contact.html" class="text-lg hover:text-purple-300">問い合わせ</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <h2>上鍛冶町竿燈会へようこそ</h2>
-        <p>上鍛冶町竿燈会の活動やイベント情報をお届けします。</p>
-        <img src="images/kantokai_photo.jpg" alt="上鍛冶町竿燈会の写真" class="home-photo">
-    </section>
-<script src="script.js"></script>
-    <footer>
-        <p>&copy; 2024 上鍛冶町竿燈会</p>
+    <main class="container mx-auto mt-10 px-4">
+        <section id="home">
+            <h2 class="text-4xl font-semibold mb-6 text-purple-800">上鍛冶町竿燈会へようこそ</h2>
+            <p class="mb-6 text-lg">上鍛冶町竿燈会の活動やイベント情報をお届けします。</p>
+            <img src="images/kantokai_photo.jpg" alt="上鍛冶町竿燈会の写真" class="rounded-lg shadow-lg w-full sm:w-3/4 mx-auto">
+        </section>
+    </main>
+
+    <footer class="bg-purple-800 text-white py-4 mt-10">
+        <p class="text-center">&copy; 2024 上鍛冶町竿燈会</p>
     </footer>
 </body>
 </html>
