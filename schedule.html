@@ -26,8 +26,7 @@
         <section id="schedule">
             <h2 class="text-4xl font-semibold mb-6 text-purple-800">行事予定</h2>
             <div class="bg-white rounded-lg shadow-lg p-4">
-                <iframe src="https://calendar.google.com/calendar/embed?src=0be31886e383a20e29f5345d6a2849d66c4431ca15fc6d8b14e8c8cb422967a1%40group.calendar.google.com&ctz=Asia/Tokyo&hl=ja&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-
+                <iframe id="calendarFrame" data-src="https://calendar.google.com/calendar/embed?src=0be31886e383a20e29f5345d6a2849d66c4431ca15fc6d8b14e8c8cb422967a1%40group.calendar.google.com&ctz=Asia/Tokyo&hl=ja&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
             </div>
         </section>
     </main>
@@ -35,5 +34,12 @@
     <footer class="bg-purple-800 text-white py-4 mt-10">
         <p class="text-center">&copy; 2024 上鍛冶町竿燈会</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var iframe = document.getElementById('calendarFrame');
+            iframe.src = iframe.getAttribute('data-src');
+        });
+    </script>
 </body>
 </html>
