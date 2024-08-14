@@ -26,8 +26,8 @@
     <main class="container mx-auto mt-10 px-4">
         <section id="activities">
             <h2 class="text-4xl font-semibold mb-6 text-purple-800">活動風景</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div id="activityGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-date="2024-08-04">
                     <img src="images/activity1.jpg" alt="活動1" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('images/activity1.jpg')">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2">妙技会</h3>
@@ -35,7 +35,30 @@
                         <p class="text-gray-800 mt-4">今年の妙技会では…</p>
                     </div>
                 </div>
-                <!-- 追加の活動内容をここに記述 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-date="2024-07-15">
+                    <img src="images/activity2.jpg" alt="活動2" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('images/activity2.jpg')">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">テスト投稿</h3>
+                        <p class="text-gray-600">2024-07-15</p>
+                        <p class="text-gray-800 mt-4">テストです</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-date="2024-06-30">
+                    <img src="images/logo.jpg" alt="活動3" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('images/logo.jpg')">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">テスト投稿</h3>
+                        <p class="text-gray-600">2024-06-30</p>
+                        <p class="text-gray-800 mt-4">テストです</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-date="2024-08-06">
+                    <img src="images/activity2.jpg" alt="テスト投稿" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('images/activity2.jpg')">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">テスト投稿</h3>
+                        <p class="text-gray-600">2024-08-06</p>
+                        <p class="text-gray-800 mt-4">テスト投稿</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -62,11 +85,18 @@
             document.getElementById('imageModal').classList.add('hidden');
         }
 
-        // モーダルの外側をクリックしたときに閉じる
-        document.getElementById('imageModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeModal();
-            }
+        // 活動風景の投稿を日付順にソートする
+        document.addEventListener('DOMContentLoaded', function() {
+            var activityGrid = document.getElementById('activityGrid');
+            var items = Array.from(activityGrid.children);
+
+            items.sort(function(a, b) {
+                return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
+            });
+
+            items.forEach(function(item) {
+                activityGrid.appendChild(item);
+            });
         });
     </script>
 </body>
