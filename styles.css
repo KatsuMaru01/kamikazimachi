@@ -1,164 +1,47 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上鍛冶町竿燈会 - ホーム</title>
+    <style>
+        .bg-custom-purple {
+            background-color: #4B0082; /* インディゴ */
+        }
+        .text-custom-purple {
+            color: #4B0082; /* インディゴ */
+        }
+        .hover-text-custom-purple:hover {
+            color: #5D3FD3; /* パープル */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-custom-purple text-white py-4">
+        <div class="container mx-auto flex flex-col items-center px-4">
+            <img src="images/logo.jpg" alt="上鍛冶町竿燈会のロゴ" class="h-16 w-16 rounded-full shadow-lg mb-2">
+            <h1 class="text-3xl font-bold">上鍛冶町竿燈会</h1>
+        </div>
+        <nav class="mt-4">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="index.html" class="text-lg hover-text-custom-purple">ホーム</a></li>
+                <li><a href="schedule.html" class="text-lg hover-text-custom-purple">行事予定</a></li>
+                <li><a href="activities.html" class="text-lg hover-text-custom-purple">活動風景</a></li>
+                <li><a href="contact.html" class="text-lg hover-text-custom-purple">問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
+    <main class="container mx-auto mt-10 px-4">
+        <section id="home">
+            <h2 class="text-4xl font-semibold mb-6 text-custom-purple">上鍛冶町竿燈会へようこそ</h2>
+            <p class="mb-6 text-lg">上鍛冶町竿燈会の活動やイベント情報をお届けします。</p>
+            <img src="images/kantokai_photo.jpg" alt="上鍛冶町竿燈会の写真" class="rounded-lg shadow-lg w-full sm:w-3/4 mx-auto">
+        </section>
+    </main>
 
-/* Header */
-header {
-    background: linear-gradient(to right, #6a1b9a, #ab47bc);
-    color: #fff;
-    padding: 20px; /* 上下左右に均等なパディング */
-    text-align: center;
-    position: relative;
-}
-
-header .logo {
-    width: 80px; /* モバイルではロゴを小さく */
-    height: 80px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-header .logo img {
-    width: 100%;
-    height: auto;
-}
-
-/* Headerタイトルとナビゲーションの位置調整 */
-header h1 {
-    margin: 0;
-    font-size: 2em; /* スマホでは少し小さめ */
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding-top: 100px; /* ロゴの下に余白を作る */
-    text-align: center; /* スマホで中央揃え */
-}
-
-/* ナビゲーションのスタイル調整 */
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column; /* スマホでは縦に並べる */
-    padding: 0;
-}
-
-nav ul li {
-    margin: 10px 0; /* 各リンクの上下のマージン */
-}
-
-nav ul li a {
-    background-color: #6a1b9a;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1em;
-    transition: background 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #ab47bc;
-}
-
-/* Section */
-section {
-    padding: 50px 20px;
-    margin: 20px 0;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-section h2 {
-    color: #6a1b9a;
-    margin-bottom: 20px;
-    font-size: 2em;
-    border-bottom: 2px solid #6a1b9a;
-    padding-bottom: 10px;
-}
-
-section p {
-    font-size: 1.2em;
-}
-
-/* 活動風景のスタイル調整 */
-#activities {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#activities article {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 10px;
-}
-
-#activities img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
-
-/* スマホ向けのメディアクエリ */
-@media (max-width: 768px) {
-    header .logo {
-        width: 60px;
-        height: 60px;
-        top: 10px;
-        right: 10px;
-    }
-
-    header h1 {
-        font-size: 1.5em;
-        padding-top: 80px;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    nav ul li a {
-        font-size: 0.9em;
-        padding: 8px 16px;
-    }
-}
+    <footer class="bg-custom-purple text-white py-4 mt-10">
+        <p class="text-center">&copy; 2024 上鍛冶町竿燈会</p>
+    </footer>
+</body>
+</html>
