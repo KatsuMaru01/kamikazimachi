@@ -4,49 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>上鍛冶町竿燈会 - 活動風景</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <header>
-        <h1>上鍛冶町竿燈会</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="schedule.html">行事予定</a></li>
-                <li><a href="activities.html">活動風景</a></li>
-                <li><a href="contact.html">問い合わせ</a></li>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-purple-800 text-white py-4">
+        <div class="container mx-auto flex flex-col items-center px-4">
+            <img src="images/logo.jpg" alt="上鍛冶町竿燈会のロゴ" class="h-16 w-16 rounded-full shadow-lg mb-2">
+            <h1 class="text-3xl font-bold">上鍛冶町竿燈会</h1>
+        </div>
+        <nav class="mt-4">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="index.html" class="text-lg hover:text-purple-300">ホーム</a></li>
+                <li><a href="schedule.html" class="text-lg hover:text-purple-300">行事予定</a></li>
+                <li><a href="activities.html" class="text-lg hover:text-purple-300">活動風景</a></li>
+                <li><a href="contact.html" class="text-lg hover:text-purple-300">問い合わせ</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="activities">
-        <h2>活動風景</h2>
-        <article class="post" data-date="2024-08-03">
-            <h3>上鍛冶町竿燈会です。</h3>
-            <p class="date">2024-08-03</p>
-            <img src="images/activity1.jpg" alt="活動1の写真">
-            <p>日々成長を続ける私たち。よろしくお願いします！</p>
-        </article>
-        <article class="post" data-date="2024-08-04">
-            <h3>妙技会</h3>
-            <p class="date">2024-08-04</p>
-            <img src="images/activity2.jpg" alt="活動2の写真">
-            <p>目標であった決勝進出には届きませんでしたが、自分たちができる最高の演技をすることができました。来年こそは決勝進出！</p>
-        </article>
+    <main class="container mx-auto mt-10 px-4">
         <section id="activities">
-        <article class="post" data-date="2024-08-03">
-            <h3>本番中のベストショットをご覧ください。</h3>
-            <p class="date">2024-08-06</p>
-            <img src="images/activity3.jpg" alt="活動3の写真">
-            <p></p>
-        </article>
-        <!-- 他の活動風景もここに追加 -->
-    </section>
+            <h2 class="text-4xl font-semibold mb-6 text-purple-800">活動風景</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/activity1.jpg" alt="活動1" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('images/activity1.jpg')">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">妙技会</h3>
+                        <p class="text-gray-600">2024-08-04</p>
+                        <p class="text-gray-800 mt-4">今年の妙技会では…</p>
+                    </div>
+                </div>
+                <!-- 追加の活動内容をここに記述 -->
+            </div>
+        </section>
+    </main>
 
-    <footer>
-        <p>&copy; 2024 上鍛冶町竿燈会</p>
+    <!-- モーダルウィンドウの構造 -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden" onclick="closeModal()">
+        <div class="relative">
+            <img id="modalImage" src="" alt="拡大表示" class="max-w-full max-h-screen rounded-lg shadow-lg">
+            <button class="absolute top-2 right-2 text-white text-2xl" onclick="closeModal()">&times;</button>
+        </div>
+    </div>
+
+    <footer class="bg-purple-800 text-white py-4 mt-10">
+        <p class="text-center">&copy; 2024 上鍛冶町竿燈会</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+
+        // モーダルの外側をクリックしたときに閉じる
+        document.getElementById('imageModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
