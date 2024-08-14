@@ -3,67 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>行事予定</title>
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>上鍛冶町竿燈会 - 行事予定</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>上鍛冶町竿燈会</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="schedule.html">行事予定</a></li>
-                <li><a href="activities.html">活動風景</a></li>
-                <li><a href="contact.html">問い合わせ</a></li>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-purple-800 text-white py-4">
+        <div class="container mx-auto flex flex-col items-center px-4">
+            <img src="images/logo.jpg" alt="上鍛冶町竿燈会のロゴ" class="h-16 w-16 rounded-full shadow-lg mb-2">
+            <h1 class="text-3xl font-bold">上鍛冶町竿燈会</h1>
+        </div>
+        <nav class="mt-4">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="index.html" class="text-lg hover:text-purple-300">ホーム</a></li>
+                <li><a href="schedule.html" class="text-lg hover:text-purple-300">行事予定</a></li>
+                <li><a href="activities.html" class="text-lg hover:text-purple-300">活動風景</a></li>
+                <li><a href="contact.html" class="text-lg hover:text-purple-300">問い合わせ</a></li>
             </ul>
         </nav>
     </header>
-    <section>
-        <div id="calendar"></div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                events: [
-                    
-                    // 他のイベントはここに追加
-                    {
-                        title: '竿燈祭り',
-                        start: '2024-08-03',
-                        description: '一年間の集大成！'
-                    },
-                    {
-                        title: '竿燈祭り',
-                        start: '2024-08-04',
-                        description: '一年間の集大成！'
-                    },
-                    {
-                        title: '竿燈祭り',
-                        start: '2024-08-05',
-                        description: '一年間の集大成！'
-                    },
-                    {
-                        title: '竿燈祭り',
-                        start: '2024-08-06',
-                        description: '一年間の集大成！'
-                    },
-                    {
-                        title: '妙技会',
-                        start: '2024-08-04',
-                        description: '規定演技、自由演技、個人演技、大若囃子'
-                    },
-                ],
-                eventClick: function(info) {
-                    alert('イベント: ' + info.event.title + '\n詳細: ' + info.event.extendedProps.description);
-                }
-            });
-            calendar.render();
-        });
-    </script>
-    <script src="script.js"></script>
+
+    <main class="container mx-auto mt-10 px-4">
+        <section id="schedule">
+            <h2 class="text-4xl font-semibold mb-6 text-purple-800">行事予定</h2>
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <iframe src="https://calendar.google.com/calendar/embed?src=0be31886e383a20e29f5345d6a2849d66c4431ca15fc6d8b14e8c8cb422967a1%40group.calendar.google.com&ctz=Asia/Tokyo&hl=ja&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-purple-800 text-white py-4 mt-10">
+        <p class="text-center">&copy; 2024 上鍛冶町竿燈会</p>
+    </footer>
 </body>
 </html>
